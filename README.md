@@ -1,4 +1,4 @@
-#  Automated Phishing Analysis with n8n & virustotal
+#  Automated SOAR Phishing Analysis Pipeline with n8n & virustotal
 
 ##  Executive Summary
 This project showcases an automated Security Orchestration, Automation, and Response (SOAR) architecture designed to minimize SOC alert fatigue and accelerate Level 1 triage. Co-architected and developed collaboratively, this pipeline autonomously ingests suspicious emails, leverages AI and external threat intelligence to analyze artifacts, and provisions enriched case files in a case management environment. 
