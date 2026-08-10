@@ -6,7 +6,7 @@ This project showcases an automated Security Orchestration, Automation, and Resp
 This initiative demonstrates a professional approach to threat detection, reducing Mean Time to Detect (MTTD) and standardizing incident response workflows.
 
 <p align="center">
-  <img src="<img width="1919" height="951" alt="Screenshot 2026-08-10 174135" src="https://github.com/user-attachments/assets/f03d90e4-aa05-43d7-80e5-375ca218b7a4" />" alt="1" />
+  <img  src="https://github.com/user-attachments/assets/f03d90e4-aa05-43d7-80e5-375ca218b7a4" />" alt="1" />
   <br>
   <em>n8n workflow</em>
 </p>
