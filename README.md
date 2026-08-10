@@ -56,10 +56,23 @@ This initiative demonstrates a professional approach to threat detection, reduci
 
 
 
-### 3. Case Provisioning & Observable Enrichment
+### 3. Observable Enrichment
 *   The pipeline utilizes dynamic identifier injection (Message-IDs/Execution Timestamps) to navigate SOAR deduplication constraints and prevent case redundancy.
 *   Unique alerts are instantly provisioned in **TheHive**.
 *   Extracted artifacts (e.g., attacker emails) are mapped as `mail` observables within the case, allowing **Cortex** to automatically execute active response analyzers against the adversary's infrastructure.
+
+<p align="center">
+  <img  src="https://github.com/user-attachments/assets/dbb70bd2-296b-43d3-9c2b-5ffa519c5e08" alt="3" />
+  <br>
+  <em>Alert creating with TheHaiv</em>
+</p>
+
+<p align="center">
+  <img  src="https://github.com/user-attachments/assets/251d1b0d-a277-4e54-94cb-fb732090e7ce" alt="3" />
+  <br>
+  <em>Alert creating with TheHaiv 2</em>
+
+
 
 ##  Defensive Mapping (MITRE ATT&CK)
 This architecture actively defends against the following adversary techniques:
