@@ -4,7 +4,13 @@
 This project showcases an automated Security Orchestration, Automation, and Response (SOAR) architecture designed to minimize SOC alert fatigue and accelerate Level 1 triage. Co-architected and developed collaboratively, this pipeline autonomously ingests suspicious emails, leverages AI and external threat intelligence to analyze artifacts, and provisions enriched case files in a case management environment. 
 
 This initiative demonstrates a professional approach to threat detection, reducing Mean Time to Detect (MTTD) and standardizing incident response workflows.
-<img width="1919" height="951" alt="Screenshot 2026-08-10 174135" src="https://github.com/user-attachments/assets/f03d90e4-aa05-43d7-80e5-375ca218b7a4" />
+
+<p align="center">
+  <img src="<img width="1919" height="951" alt="Screenshot 2026-08-10 174135" src="https://github.com/user-attachments/assets/f03d90e4-aa05-43d7-80e5-375ca218b7a4" />" alt="1" />
+  <br>
+  <em>n8n workflow</em>
+</p>
+
 
 ##  Core Architecture & Workflow
 
@@ -12,12 +18,32 @@ This initiative demonstrates a professional approach to threat detection, reduci
 *   An IMAP sensor actively monitors a dedicated security mailbox.
 *   Upon receipt, custom JavaScript and Regex parse the email headers and body to extract immutable artifacts, specifically targeting the raw sender address and embedded URLs before they can be obfuscated by the attacker.
 
+  <p align="center">
+  <img src="<img width="1918" height="953" alt="Screenshot 2026-08-04 224006" src="https://github.com/user-attachments/assets/81ca9bbb-0a21-447f-a364-9dfedc968075" />" alt="2" />
+  <br>
+  <em>n8n workflow</em>
+</p>
+
+<p align="center">
+  <img src=" <img width="1919" height="956" alt="Screenshot 2026-08-04 224958" src="https://github.com/user-attachments/assets/04c05045-9176-42d3-8da3-b1f26cd6c1f9" />" alt="3" />
+  <br>
+  <em>n8n workflow</em>
+</p>
+
+
+
 ### 2. Threat Intel & AI-Driven Triage
 *   Extracted URLs are routed to the **VirusTotal API** for malicious signature and behavior detection.
 *   The raw telemetry is forwarded to **Google Gemini (LLM)**, acting as a virtual Level 1 Analyst. Gemini is prompted with a strict SOC persona to generate a structured Triage Report containing:
     *   **Threat Risk Level** (Low/Medium/High)
     *   **Risk Analysis** (e.g., Domain Typosquatting, Credential Harvesting)
     *   **Containment Recommendations**
+
+      <img width="1871" height="882" alt="image" src="https://github.com/user-attachments/assets/d61a32dd-2230-4f14-867a-3ebc906e88a4" />
+
+      <img width="1851" height="879" alt="image" src="https://github.com/user-attachments/assets/7c8121cc-09ff-4201-89f4-c53a2005396b" />
+
+
 
 ### 3. Case Provisioning & Observable Enrichment
 *   The pipeline utilizes dynamic identifier injection (Message-IDs/Execution Timestamps) to navigate SOAR deduplication constraints and prevent case redundancy.
