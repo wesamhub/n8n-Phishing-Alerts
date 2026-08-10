@@ -64,13 +64,13 @@ This initiative demonstrates a professional approach to threat detection, reduci
 <p align="center">
   <img  src="https://github.com/user-attachments/assets/dbb70bd2-296b-43d3-9c2b-5ffa519c5e08" alt="3" />
   <br>
-  <em>Alert creating with TheHaiv</em>
+  <em>Alert creating with TheHive</em>
 </p>
 
 <p align="center">
   <img  src="https://github.com/user-attachments/assets/251d1b0d-a277-4e54-94cb-fb732090e7ce" alt="3" />
   <br>
-  <em>Alert creating with TheHaiv 2</em>
+  <em>Alert creating with TheHive 2</em>
 
 
 # 🕵️ End-to-End Execution Demonstration
