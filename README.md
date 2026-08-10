@@ -6,7 +6,7 @@ This project showcases an automated Security Orchestration, Automation, and Resp
 This initiative demonstrates a professional approach to threat detection, reducing Mean Time to Detect (MTTD) and standardizing incident response workflows.
 
 <p align="center">
-  <img  src="https://github.com/user-attachments/assets/f03d90e4-aa05-43d7-80e5-375ca218b7a4" />" alt="1" />
+  <img  src="https://github.com/user-attachments/assets/f03d90e4-aa05-43d7-80e5-375ca218b7a4" alt="1" />
   <br>
   <em>n8n workflow</em>
 </p>
@@ -19,13 +19,13 @@ This initiative demonstrates a professional approach to threat detection, reduci
 *   Upon receipt, custom JavaScript and Regex parse the email headers and body to extract immutable artifacts, specifically targeting the raw sender address and embedded URLs before they can be obfuscated by the attacker.
 
   <p align="center">
-  <img src="<img width="1918" height="953" alt="Screenshot 2026-08-04 224006" src="https://github.com/user-attachments/assets/81ca9bbb-0a21-447f-a364-9dfedc968075" />" alt="2" />
+  <img src="<img width="1918" height="953" src="https://github.com/user-attachments/assets/81ca9bbb-0a21-447f-a364-9dfedc968075" alt="2" />
   <br>
   <em>n8n workflow</em>
 </p>
 
 <p align="center">
-  <img src=" <img width="1919" height="956" alt="Screenshot 2026-08-04 224958" src="https://github.com/user-attachments/assets/04c05045-9176-42d3-8da3-b1f26cd6c1f9" />" alt="3" />
+  <img src=" <img width="1919" height="956" src="https://github.com/user-attachments/assets/04c05045-9176-42d3-8da3-b1f26cd6c1f9" alt="3" />
   <br>
   <em>n8n workflow</em>
 </p>
@@ -39,9 +39,17 @@ This initiative demonstrates a professional approach to threat detection, reduci
     *   **Risk Analysis** (e.g., Domain Typosquatting, Credential Harvesting)
     *   **Containment Recommendations**
 
-      <img width="1871" height="882" alt="image" src="https://github.com/user-attachments/assets/d61a32dd-2230-4f14-867a-3ebc906e88a4" />
+      <p align="center">
+  <img src=" <img width="1919" height="956" src="https://github.com/user-attachments/assets/d61a32dd-2230-4f14-867a-3ebc906e88a4" alt="3" />
+  <br>
+  <em>n8n workflow</em>
+</p>
 
-      <img width="1851" height="879" alt="image" src="https://github.com/user-attachments/assets/7c8121cc-09ff-4201-89f4-c53a2005396b" />
+      <p align="center">
+  <img width="1919" height="956" src="https://github.com/user-attachments/assets/7c8121cc-09ff-4201-89f4-c53a2005396b" alt="3" />
+  <br>
+  <em>n8n workflow</em>
+</p>
 
 
 
