@@ -4,6 +4,7 @@
 This project showcases an automated Security Orchestration, Automation, and Response (SOAR) architecture designed to minimize SOC alert fatigue and accelerate Level 1 triage. Co-architected and developed collaboratively, this pipeline autonomously ingests suspicious emails, leverages AI and external threat intelligence to analyze artifacts, and provisions enriched case files in a case management environment. 
 
 This initiative demonstrates a professional approach to threat detection, reducing Mean Time to Detect (MTTD) and standardizing incident response workflows.
+<img width="1919" height="951" alt="Screenshot 2026-08-10 174135" src="https://github.com/user-attachments/assets/f03d90e4-aa05-43d7-80e5-375ca218b7a4" />
 
 ##  Core Architecture & Workflow
 
