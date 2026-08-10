@@ -1,71 +1,42 @@
-Automated Phishing Analysis & Incident Response Pipeline
- Overview
-This project is an automated Security Orchestration, Automation, and Response (SOAR) pipeline engineered to ingest, analyze, and escalate suspicious emails. Built as a collaborative cybersecurity initiative, the system leverages AI-driven analysis and threat intelligence to reduce alert fatigue, extract critical Indicators of Compromise (IoCs), and standardize incident triage for SOC environments.
+#  Automated Phishing Analysis & SOC Incident Response Pipeline
 
-(Suggested Image: A high-level screenshot of your entire n8n workflow zoomed out so the viewer can see the complete flow from left to right).
+##  Executive Summary
+This project showcases an automated Security Orchestration, Automation, and Response (SOAR) architecture designed to minimize SOC alert fatigue and accelerate Level 1 triage. Co-architected and developed collaboratively, this pipeline autonomously ingests suspicious emails, leverages AI and external threat intelligence to analyze artifacts, and provisions enriched case files in a case management environment. 
 
- Technology Stack
-Automation Engine: n8n
+This initiative demonstrates a professional approach to threat detection, reducing Mean Time to Detect (MTTD) and standardizing incident response workflows.
 
-Case Management / SIEM: TheHive & Cortex
+##  Core Architecture & Workflow
 
-Threat Intelligence: VirusTotal API
+### 1. Automated Ingestion & Artifact Parsing
+*   An IMAP sensor actively monitors a dedicated security mailbox.
+*   Upon receipt, custom JavaScript and Regex parse the email headers and body to extract immutable artifacts, specifically targeting the raw sender address and embedded URLs before they can be obfuscated by the attacker.
 
-AI Triage: Google Gemini (LLM)
+### 2. Threat Intel & AI-Driven Triage
+*   Extracted URLs are routed to the **VirusTotal API** for malicious signature and behavior detection.
+*   The raw telemetry is forwarded to **Google Gemini (LLM)**, acting as a virtual Level 1 Analyst. Gemini is prompted with a strict SOC persona to generate a structured Triage Report containing:
+    *   **Threat Risk Level** (Low/Medium/High)
+    *   **Risk Analysis** (e.g., Domain Typosquatting, Credential Harvesting)
+    *   **Containment Recommendations**
 
-Protocols & Regex: IMAP, custom JavaScript parsing for observable extraction
+### 3. Case Provisioning & Observable Enrichment
+*   The pipeline utilizes dynamic identifier injection (Message-IDs/Execution Timestamps) to navigate SOAR deduplication constraints and prevent case redundancy.
+*   Unique alerts are instantly provisioned in **TheHive**.
+*   Extracted artifacts (e.g., attacker emails) are mapped as `mail` observables within the case, allowing **Cortex** to automatically execute active response analyzers against the adversary's infrastructure.
 
- Architecture & Workflow
-The pipeline operates completely autonomously, executing the following phases upon the receipt of a suspicious email:
+##  Defensive Mapping (MITRE ATT&CK)
+This architecture actively defends against the following adversary techniques:
+*   **Initial Access [T1566]:** Phishing - Automating the detection and initial triage of suspicious email delivery.
+*   **Execution [T1204.001]:** Malicious Link - Pre-emptively scanning user-reported URLs to prevent payload execution.
 
-1. Ingestion & Parsing
-An IMAP trigger continuously monitors a dedicated security mailbox. Upon receiving a reported email, the pipeline uses custom JavaScript and Regex to cleanly parse the email headers and body, extracting the raw sender email address and any embedded URLs.
+##  Technology Stack
+*   **Automation/SOAR:** n8n
+*   **Case Management:** TheHive 5
+*   **Threat Intel / Enrichment:** Cortex, VirusTotal API
+*   **AI Analysis:** Google Gemini
+*   **Data Parsing:** Regex, custom JavaScript
 
-(Suggested Image: A screenshot showing the output of your n8n node where the clean email address is successfully extracted, similar to the value[0].address extraction we worked on).
+##  Key Learnings & Future Enhancements
+*   **Data Sanitization:** Overcame challenges with nested JSON payloads from email headers to reliably extract clean observables for automated routing.
+*   **Future Roadmap:** Future iterations will include automated blocklist generation for edge firewalls and secure email gateways based on Cortex analyzer outputs.
 
-2. Threat Intel & AI Triage
-Extracted URLs are automatically routed to the VirusTotal API. The resulting malicious/suspicious detection scores, along with the extracted email artifacts, are sent to the Google Gemini model.
-
-Gemini acts as an automated Level 1 SOC Analyst, utilizing a custom prompt to generate:
-
-A concise Threat Risk Level (Low/Medium/High).
-
-A brief analysis of the potential risk (e.g., domain typosquatting, payload delivery).
-
-Actionable containment recommendations for the security team.
-
-(Suggested Image: A screenshot of the Gemini node's output, showing the nicely formatted SOC triage report it generates).
-
-3. Case Creation & Observable Enrichment
-The pipeline deduplicates alerts dynamically and generates a unique incident case in TheHive. The Gemini triage report is appended to the case description.
-
-Crucially, the extracted attacker email is added directly to TheHive as a mail Observable. This allows integrated tools like Cortex to immediately run automated analyzers against the threat actor's infrastructure.
-
-(Suggested Image: A screenshot of the final, generated alert inside TheHive's dashboard, showing the dynamic Source Reference, the Gemini text, and the attached observables).
-
- TTPs & Defensive Mapping
-This pipeline addresses the following adversary behaviors based on the MITRE ATT&CK framework:
-
-Phishing (T1566): Automating the initial analysis of suspicious emails.
-
-Malicious Link Execution (T1204.001): Pre-emptively scanning and analyzing user-reported URLs.
-
-Indicator Removal on Host (T1070): Preserving the original sender artifacts dynamically before they can be obfuscated.
-
- Collaborative Development
-This security architecture was co-architected and developed as a collaborative team effort to simulate enterprise-grade SOC workflows.
-
-Wesam Hamdan - Pipeline Architecture, AI Integration, & Observable Parsing
-
-[Insert Co-Architect Name] - [Insert their main contribution, e.g., SIEM Configuration, Threat Intel Routing, etc.]
-
- Deployment Instructions
-To deploy this pipeline in your own lab environment:
-
-Ensure n8n, TheHive, and Cortex are running on the same Docker network (e.g., docker_thehive-cortex-network).
-
-Clone this repository and import the phishing-pipeline.json file into your n8n instance.
-
-Update the credentials for your IMAP mailbox, TheHive instance (http://thehive:9000), and Google Gemini API.
-
-Ensure Cortex is configured within TheHive to automatically run analyzers on mail and url data types.
+---
