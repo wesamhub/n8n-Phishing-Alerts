@@ -21,13 +21,13 @@ This initiative demonstrates a professional approach to threat detection, reduci
   <p align="center">
   <img src="https://github.com/user-attachments/assets/81ca9bbb-0a21-447f-a364-9dfedc968075" alt="2" />
   <br>
-  <em>n8n workflow</em>
+  <em>Email Trigger</em>
 </p>
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/04c05045-9176-42d3-8da3-b1f26cd6c1f9" alt="3" />
   <br>
-  <em>n8n workflow</em>
+  <em>script for extracting emails</em>
 </p>
 
 
@@ -36,7 +36,7 @@ This initiative demonstrates a professional approach to threat detection, reduci
 *   Extracted URLs are routed to the **VirusTotal API** for malicious signature and behavior detection.
 *   The raw telemetry is forwarded to **Google Gemini (LLM)**, acting as a virtual Level 1 Analyst. Gemini is prompted with a strict SOC persona to generate a structured Triage Report containing:
     *   **Threat Risk Level** (Low/Medium/High)
-    *   **Risk Analysis** (e.g., Domain Typosquatting, Credential Harvesting)
+    *   **Risk Analysis** 
     *   **Containment Recommendations**
 
 
@@ -44,14 +44,14 @@ This initiative demonstrates a professional approach to threat detection, reduci
 <p align="center">
   <img  src="https://github.com/user-attachments/assets/d61a32dd-2230-4f14-867a-3ebc906e88a4" alt="3" />
   <br>
-  <em>n8n workflow</em>
+  <em>POST request</em>
 </p>
 
 
 <p align="center">
   <img  src="https://github.com/user-attachments/assets/7c8121cc-09ff-4201-89f4-c53a2005396b" alt="3" />
   <br>
-  <em>n8n workflow</em>
+  <em>GET request</em>
 </p>
 
 
