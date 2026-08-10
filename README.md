@@ -1,4 +1,5 @@
 Automated Phishing Analysis & Incident Response Pipeline
+
 📖 Overview
 This project is an automated Security Orchestration, Automation, and Response (SOAR) pipeline engineered to ingest, analyze, and escalate suspicious emails. Built as a collaborative cybersecurity initiative, the system leverages AI-driven analysis and threat intelligence to reduce alert fatigue, extract critical Indicators of Compromise (IoCs), and standardize incident triage for SOC environments.
 
