@@ -34,15 +34,3 @@ This architecture actively defends against the following adversary techniques:
 *   **Threat Intel / Enrichment:** Cortex, VirusTotal API
 *   **AI Analysis:** Google Gemini
 *   **Data Parsing:** Regex, custom JavaScript
-
-##  Collaborative Development
-This pipeline was designed and engineered as a collaborative team effort to replicate enterprise-grade SOC operations. 
-
-*   **Wesam Hamdan:** Pipeline Architecture, AI prompt engineering, Regex data extraction, and API integration.
-*   **[Insert Team Member Name]:** [Insert role, e.g., SIEM provisioning, Threat Intel routing, Quality Assurance.]
-
-##  Key Learnings & Future Enhancements
-*   **Data Sanitization:** Overcame challenges with nested JSON payloads from email headers to reliably extract clean observables for automated routing.
-*   **Future Roadmap:** Future iterations will include automated blocklist generation for edge firewalls and secure email gateways based on Cortex analyzer outputs.
-
----
